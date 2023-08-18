@@ -18,7 +18,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIR = os.Path.join(BASE_DIR, 'templates')
+# TEMPLATES_DIR = os.Path.join(BASE_DIR, 'templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -30,9 +30,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = 
-    ["virtual-travel.herokuapp.com"]
-    ['8000-zahramousavi612-virtual-68c3nz07cm.us2.codeanyapp.com']
+ALLOWED_HOSTS = [
+    "virtual-travel.herokuapp.com",
+    '8000-zahramousavi612-virtual-68c3nz07cm.us2.codeanyapp.com'
+]
 
 
 # Application definition
@@ -64,7 +65,7 @@ ROOT_URLCONF = 'virtualtravel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,7 +91,7 @@ WSGI_APPLICATION = 'virtualtravel.wsgi.application'
 #     }
 # }
 DATABASES = {
-     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
@@ -132,7 +133,7 @@ USE_TZ = True
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
- 
+
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
