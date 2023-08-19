@@ -32,6 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'virtual-travel.herokuapp.com',
+    'virtual-travel-078c66fa8b87.herokuapp.com',
     '8000-zahramousavi612-virtual-68c3nz07cm.us2.codeanyapp.com'
 ]
 
