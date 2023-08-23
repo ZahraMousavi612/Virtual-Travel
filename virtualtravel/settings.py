@@ -18,7 +18,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# TEMPLATES_DIR = os.Path.join(BASE_DIR, 'templates')
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,12 +28,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'virtual-travel-078c66fa8b87.herokuapp.com',
     'virtual-travel.herokuapp.com',
-    '8000-zahramousavi612-virtual-68c3nz07cm.us2.codeanyapp.com'
+    '8000-zahramousavi612-virtual-68c3nz07cm.us2.codeanyapp.com',
+    '8001-zahramousavi612-virtual-68c3nz07cm.us2.codeanyapp.com'
 ]
 
 
@@ -67,7 +68,7 @@ ROOT_URLCONF = 'virtualtravel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -144,10 +145,4 @@ STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-}
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
