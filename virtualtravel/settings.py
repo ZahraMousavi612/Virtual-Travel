@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -34,7 +37,8 @@ ALLOWED_HOSTS = [
     'virtual-travel-078c66fa8b87.herokuapp.com',
     'virtual-travel.herokuapp.com',
     '8000-zahramousavi612-virtual-68c3nz07cm.us2.codeanyapp.com',
-    '8001-zahramousavi612-virtual-68c3nz07cm.us2.codeanyapp.com'
+    '8001-zahramousavi612-virtual-68c3nz07cm.us2.codeanyapp.com',
+    '*',
 ]
 
 
@@ -146,3 +150,9 @@ STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME' : 'dc84nleun',
+    'API_KEY' : '237675737388532',
+    'API_SECRET' : 'bBKeagz3dIrZTwGnVaTbBBwuTI4',
+}
